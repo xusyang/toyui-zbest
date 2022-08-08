@@ -5,7 +5,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 module.exports = {
   mode: 'development',
   entry: {
-    bundle: './src/index.js',
+    index: './src/index.js',
+    login: './src/login.js',
   },
   output: {
     filename: '[name].[hash:6].js',
@@ -35,10 +36,12 @@ module.exports = {
     new HtmlWebpackPlugin({
       filename: 'index.html',
       template: './src/index.html',
+      chunks: ['index'],
     }),
     new HtmlWebpackPlugin({
       filename: 'login.html',
       template: './src/login.html',
+      chunks: ['login'],
     }),
     new webpack.ProvidePlugin({
       $: 'jquery',

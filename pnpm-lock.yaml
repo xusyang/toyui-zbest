@@ -2,10 +2,16 @@ lockfileVersion: 5.4
 
 specifiers:
   css-loader: ^6.7.1
+  flexslider: ^2.7.2
   html-webpack-plugin: ^5.5.0
+  jquery: ^3.6.0
   style-loader: ^3.3.1
   webpack: ^5.74.0
   webpack-cli: ^4.10.0
+
+dependencies:
+  flexslider: 2.7.2
+  jquery: 3.6.0
 
 devDependencies:
   css-loader: 6.7.1_webpack@5.74.0
@@ -507,6 +513,12 @@ packages:
       path-exists: 4.0.0
     dev: true
 
+  /flexslider/2.7.2:
+    resolution: {integrity: sha512-ayzD+g+zYPG+sM+LXyXbfm4gS4unLB0PGsjwIu03TeRNZ+JLQTtbV3J42VO9ooRZ9idmuWgR5s3r4hw6shS1tQ==}
+    dependencies:
+      jquery: 3.6.0
+    dev: false
+
   /function-bind/1.1.1:
     resolution: {integrity: sha512-yIovAzMX49sF8Yl58fSCWJ5svSLuaibPxXQJFLmBObTuCr0Mf1KiPopGM9NiFjiYBCbfaa2Fh6breQ6ANVTI0A==}
     dev: true
@@ -626,6 +638,10 @@ packages:
       merge-stream: 2.0.0
       supports-color: 8.1.1
     dev: true
+
+  /jquery/3.6.0:
+    resolution: {integrity: sha512-JVzAR/AjBvVt2BmYhxRCSYysDsPcssdmTFnzyLEts9qNwmjmu4JTAMYubEfwVOSwpQ1I1sKKFcxhZCI2buerfw==}
+    dev: false
 
   /json-parse-even-better-errors/2.3.1:
     resolution: {integrity: sha512-xyFwyhro/JEof6Ghe2iz2NcXoj2sloNsWr/XsERDK/oiPCfaNhl5ONfp+jQdAZRQQ0IJWNzH9zIZF7li91kh2w==}

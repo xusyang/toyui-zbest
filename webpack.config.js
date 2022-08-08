@@ -7,8 +7,29 @@ module.exports = {
     bundle: './src/index.js',
   },
   output: {
-    filename: '[name]-[hash:7].js',
+    filename: '[name].[hash:6].js',
     path: path.join(__dirname, '/dist'),
+  },
+  module: {
+    rules: [
+      {
+        test: /\.css$/i,
+        use: ['style-loader', 'css-loader'],
+      },
+      {
+        test: /\.(png|jpg|gif)$/i,
+        type: 'asset',
+        parser: {
+          dataUrlCondition: {
+            maxSize: 4 * 1,
+          },
+        },
+        generator: {
+          filename: 'images/[name].[hash:6][ext]',
+          publicPath: 'https://cdn/',
+        },
+      },
+    ],
   },
   plugins: [
     new HtmlWebpackPlugin({

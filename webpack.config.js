@@ -3,6 +3,7 @@ const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
+const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 
 const isDev = process.env.NODE_ENV === 'development'
 module.exports = {
@@ -80,6 +81,7 @@ module.exports = {
     new CopyWebpackPlugin({
       patterns: [{ from: path.join(__dirname, '/src/img'), to: path.join(__dirname, '/dist/img') }],
     }),
+    new CleanWebpackPlugin(),
   ],
   resolve: {
     extensions: ['.ts', '...'],

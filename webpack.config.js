@@ -31,6 +31,17 @@ module.exports = {
           filename: 'images/[name].[hash:6][ext]',
         },
       },
+      {
+        test: /\.js$/,
+        use: [
+          {
+            loader: 'babel-loader',
+            options: {
+              presets: ['@babel/preset-env'],
+            },
+          },
+        ],
+      },
     ],
   },
   plugins: [

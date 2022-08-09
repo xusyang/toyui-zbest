@@ -42,6 +42,10 @@ module.exports = {
           },
         ],
       },
+      {
+        test: /\.tsx?$/,
+        use: 'ts-loader',
+      },
     ],
   },
   plugins: [
@@ -63,6 +67,9 @@ module.exports = {
       patterns: [{ from: path.join(__dirname, '/src/img'), to: path.join(__dirname, '/dist/img') }],
     }),
   ],
+  resolve: {
+    extensions: ['.ts', '...'],
+  },
   devServer: {
     static: {
       directory: path.join(__dirname, 'dist'),

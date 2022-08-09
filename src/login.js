@@ -1,10 +1,11 @@
 import './css/public.css'
 import './css/login.css'
+import { isString } from './util'
 
 function add(a, b) {
   return () => {
-    a + b
+    if (isString(a)) {
+      return a
+    } else return b
   }
 }
-
-console.log(add())

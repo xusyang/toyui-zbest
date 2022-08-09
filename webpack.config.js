@@ -9,7 +9,7 @@ const CssMinimizerWebpackPlugin = require('css-minimizer-webpack-plugin')
 
 const isDev = process.env.NODE_ENV === 'development'
 module.exports = {
-  mode: 'development',
+  mode: isDev ? 'development' : 'production',
   entry: {
     index: './src/index.js',
     login: './src/login.js',
@@ -64,12 +64,7 @@ module.exports = {
   },
   optimization: {
     minimize: true,
-    minimizer: [
-      new UglifyJsPlugin({
-        sourceMap: true,
-      }),
-      new CssMinimizerWebpackPlugin(),
-    ],
+    minimizer: [new UglifyJsPlugin(), new CssMinimizerWebpackPlugin()],
   },
   plugins: [
     new MiniCssExtractPlugin({

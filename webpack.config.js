@@ -23,7 +23,12 @@ module.exports = {
       },
       {
         test: /\.less$/i,
-        use: [isDev && false ? 'style-loader' : MiniCssExtractPlugin.loader, 'css-loader', 'less-loader'],
+        use: [
+          isDev && false ? 'style-loader' : MiniCssExtractPlugin.loader,
+          'css-loader',
+          'postcss-loader',
+          'less-loader',
+        ],
       },
       {
         test: /\.(png|jpg|gif)$/i,

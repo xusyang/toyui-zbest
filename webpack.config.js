@@ -4,6 +4,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
+const CssMinimizerWebpackPlugin = require('css-minimizer-webpack-plugin')
 
 const isDev = process.env.NODE_ENV === 'development'
 module.exports = {
@@ -58,6 +60,15 @@ module.exports = {
         test: /\.tsx?$/,
         use: 'ts-loader',
       },
+    ],
+  },
+  optimization: {
+    minimize: true,
+    minimizer: [
+      new UglifyJsPlugin({
+        sourceMap: true,
+      }),
+      new CssMinimizerWebpackPlugin(),
     ],
   },
   plugins: [

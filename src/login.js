@@ -1,5 +1,4 @@
-import './css/public.css'
-import './css/login.css'
+import './less/index.less'
 import { isString } from './util'
 
 function add(a, b) {

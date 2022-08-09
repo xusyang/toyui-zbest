@@ -9,6 +9,7 @@ specifiers:
   flexslider: ^2.7.2
   html-webpack-plugin: ^5.5.0
   jquery: ^3.6.0
+  mini-css-extract-plugin: ^2.6.1
   style-loader: ^3.3.1
   ts-loader: ^9.3.1
   typescript: ^4.7.4
@@ -27,6 +28,7 @@ devDependencies:
   copy-webpack-plugin: 11.0.0_webpack@5.74.0
   css-loader: 6.7.1_webpack@5.74.0
   html-webpack-plugin: 5.5.0_webpack@5.74.0
+  mini-css-extract-plugin: 2.6.1_webpack@5.74.0
   style-loader: 3.3.1_webpack@5.74.0
   ts-loader: 9.3.1_xnp4kzegbjokq62cajex2ovgkm
   typescript: 4.7.4
@@ -2926,6 +2928,16 @@ packages:
   /mimic-fn/2.1.0:
     resolution: {integrity: sha512-OqbOk5oEQeAZ8WXWydlu9HJjz9WVdEIvamMCcXmuqUYjTknH/sqsWvhQ3vgwKFRR1HpjvNBKQ37nbJgYzGqGcg==}
     engines: {node: '>=6'}
+    dev: true
+
+  /mini-css-extract-plugin/2.6.1_webpack@5.74.0:
+    resolution: {integrity: sha512-wd+SD57/K6DiV7jIR34P+s3uckTRuQvx0tKPcvjFlrEylk6P4mQ2KSWk1hblj1Kxaqok7LogKOieygXqBczNlg==}
+    engines: {node: '>= 12.13.0'}
+    peerDependencies:
+      webpack: ^5.0.0
+    dependencies:
+      schema-utils: 4.0.0
+      webpack: 5.74.0_webpack-cli@4.10.0
     dev: true
 
   /minimalistic-assert/1.0.1:

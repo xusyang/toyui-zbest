@@ -60,6 +60,13 @@ module.exports = {
         test: /\.tsx?$/,
         use: 'ts-loader',
       },
+      {
+        test: /\.ejs$/,
+        loader: 'ejs-loader',
+        options: {
+          esModule: false,
+        },
+      },
     ],
   },
   optimization: {

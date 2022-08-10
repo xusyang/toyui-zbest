@@ -7,7 +7,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 const CssMinimizerWebpackPlugin = require('css-minimizer-webpack-plugin')
 
-const isDev = process.env.NODE_ENV === 'development'
+const isDev = process.env.NODE_ENV === 'development' || true
 module.exports = {
   mode: isDev ? 'development' : 'production',
   entry: {
@@ -65,6 +65,23 @@ module.exports = {
   optimization: {
     minimize: true,
     minimizer: [new UglifyJsPlugin(), new CssMinimizerWebpackPlugin()],
+    splitChunks: {
+      chunks: 'all',
+      minSize: 30 * 1024,
+      name: 'common',
+      cacheGroups: {
+        jquery: {
+          name: 'jquery',
+          test: /jquery\.js/,
+          chunks: 'all',
+        },
+        lodash: {
+          name: 'lodash',
+          test: /lodash/,
+          chunks: 'all',
+        },
+      },
+    },
   },
   plugins: [
     new MiniCssExtractPlugin({
